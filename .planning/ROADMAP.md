@@ -10,8 +10,8 @@ Vesper delivers a Slack-integrated asset tracking system in three phases: first 
 - Integer phases (1, 2, 3): Planned milestone work
 - Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
-- [x] **Phase 1: Foundation & Data Pipeline** - Slack integration, asset extraction, version tracking ✓
-- [x] **Phase 2: Intelligence & Query** - Search, filtering, natural language understanding ✓
+- [x] **Phase 1: Foundation & Data Pipeline** - Slack integration, asset extraction, version tracking
+- [x] **Phase 2: Intelligence & Query** - Search, filtering, natural language understanding
 - [ ] **Phase 3: User Interfaces** - Slack bot and web dashboard
 - [ ] **Phase 4: Gemini API Support** - Add Google Gemini as alternative LLM provider
 
@@ -70,16 +70,17 @@ Plans:
 ### Phase 4: Gemini API Support
 **Goal**: Support Google Gemini as an alternative LLM provider for intent extraction
 **Depends on**: Phase 2
-**Requirements**: TBD
+**Requirements**: LLM-01
 **Success Criteria** (what must be TRUE):
   1. System can use Gemini API for natural language intent extraction
-  2. Users can configure LLM provider via environment variable (GEMINI_API_KEY)
+  2. Users can configure LLM provider via environment variable (GOOGLE_GENERATIVE_AI_API_KEY)
   3. Fallback behavior when primary LLM unavailable
   4. Consistent query results regardless of LLM provider
-**Plans**: TBD (run /gsd:plan-phase 4 to break down)
+**Plans**: 2 plans in 2 waves
 
 Plans:
-- [ ] 04-01-PLAN.md — TBD
+- [ ] 04-01-PLAN.md — LLM provider infrastructure (provider factory, fallback, env config)
+- [ ] 04-02-PLAN.md — Intent extraction integration and provider testing
 
 ## Progress
 
@@ -91,7 +92,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | 1. Foundation & Data Pipeline | 5/5 | Complete | 2026-01-23 |
 | 2. Intelligence & Query | 3/3 | Complete | 2026-01-23 |
 | 3. User Interfaces | 3/4 | In Progress | - |
-| 4. Gemini API Support | 0/? | Planned | - |
+| 4. Gemini API Support | 0/2 | Planned | - |
 
 ## Dependencies
 
@@ -100,7 +101,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 - Must be obtained before Phase 1 can complete Slack integration
 - Recommended: Start IT approval process immediately in parallel with development setup
 - OpenAI API key for Phase 2 LLM intent extraction (OPENAI_API_KEY)
-- Google Gemini API key for Phase 4 alternative LLM provider (GEMINI_API_KEY)
+- Google Gemini API key for Phase 4 alternative LLM provider (GOOGLE_GENERATIVE_AI_API_KEY)
 
 **Internal:**
 - Phase 2 requires Phase 1 (need data before queries)
@@ -109,4 +110,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 ---
 *Roadmap created: 2026-01-23*
-*Last updated: 2026-01-23 — Added Phase 4 (Gemini API Support)*
+*Last updated: 2026-01-23 — Phase 4 planning complete (2 plans in 2 waves)*
