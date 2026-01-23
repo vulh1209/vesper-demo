@@ -11,6 +11,7 @@
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
+    "db:verify": "tsx src/db/verify.ts",
     "slack:test": "tsx src/services/slack/test-connection.ts"
   },
   "keywords": [],
