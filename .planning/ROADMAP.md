@@ -11,7 +11,7 @@ Vesper delivers a Slack-integrated asset tracking system in three phases: first 
 - Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
 - [x] **Phase 1: Foundation & Data Pipeline** - Slack integration, asset extraction, version tracking ✓
-- [ ] **Phase 2: Intelligence & Query** - Search, filtering, natural language understanding
+- [x] **Phase 2: Intelligence & Query** - Search, filtering, natural language understanding ✓
 - [ ] **Phase 3: User Interfaces** - Slack bot and web dashboard
 
 ## Phase Details
@@ -48,7 +48,7 @@ Plans:
 Plans:
 - [x] 02-01-PLAN.md — Database search layer (pg_trgm extension, fuzzy search service)
 - [x] 02-02-PLAN.md — NLP layer (Vietnamese normalizer, LLM intent extraction)
-- [ ] 02-03-PLAN.md — Query executor (intent dispatch, asset repository, integration)
+- [x] 02-03-PLAN.md — Query executor (intent dispatch, asset repository, integration)
 
 ### Phase 3: User Interfaces
 **Goal**: Team members access asset tracking via Slack bot and web dashboard
@@ -74,7 +74,7 @@ Phases execute in numeric order: 1 -> 2 -> 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Data Pipeline | 5/5 | Complete | 2026-01-23 |
-| 2. Intelligence & Query | 2/3 | In progress | - |
+| 2. Intelligence & Query | 3/3 | Complete | 2026-01-23 |
 | 3. User Interfaces | 0/4 | Planned | - |
 
 ## Dependencies
@@ -91,4 +91,4 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 ---
 *Roadmap created: 2026-01-23*
-*Last updated: 2026-01-23 — Plan 02-02 complete*
+*Last updated: 2026-01-23 — Phase 2 complete*
