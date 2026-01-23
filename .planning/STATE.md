@@ -44,6 +44,8 @@ Recent decisions affecting current work:
 
 - **NodeNext module resolution** - Better ESM/CJS interop (01-01)
 - **Docker Compose v2 format** - No version attribute, modern syntax (01-01)
+- **Slack timestamps as TEXT** - Avoid float precision loss in database storage (01-02)
+- **Composite unique index** - (channel, ts, asset_id) prevents duplicate versions (01-02)
 - **Slack ts as string** - Avoid float precision loss with timestamps (01-03)
 - **Cursor-only pagination** - Never check result count for Slack API (01-03)
 
@@ -57,9 +59,9 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-23T11:24Z
-Stopped at: Completed 01-03-PLAN.md
+Last session: 2026-01-23T11:27Z
+Stopped at: Completed 01-02-PLAN.md (out of order backfill)
 Resume file: None
 
 ---
-*Next step: Execute next plan in phase (01-04 or create it)*
+*Next step: Execute 01-04 (Asset Parser & Processor)*
