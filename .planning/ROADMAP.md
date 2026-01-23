@@ -58,11 +58,13 @@ Plans:
   1. Slack bot responds to queries in Slack with asset version information
   2. Web dashboard displays asset versions, history, and search interface
   3. Both interfaces return consistent results (same data layer)
-**Plans**: TBD
+**Plans**: 4 plans in 3 waves
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
+- [ ] 03-01-PLAN.md — Shared query service and Hono API layer
+- [ ] 03-02-PLAN.md — Slack bot (slash commands, app mentions, Block Kit responses)
+- [ ] 03-03-PLAN.md — Web dashboard (Next.js with shadcn/ui)
+- [ ] 03-04-PLAN.md — Integration testing (cross-interface consistency verification)
 
 ## Progress
 
@@ -73,7 +75,7 @@ Phases execute in numeric order: 1 -> 2 -> 3
 |-------|----------------|--------|-----------|
 | 1. Foundation & Data Pipeline | 0/5 | Planned | - |
 | 2. Intelligence & Query | 0/3 | Planned | - |
-| 3. User Interfaces | 0/TBD | Not started | - |
+| 3. User Interfaces | 0/4 | Planned | - |
 
 ## Dependencies
 
