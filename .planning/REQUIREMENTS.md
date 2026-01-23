@@ -9,8 +9,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Data Ingestion
 
-- [ ] **INGEST-01**: System scrapes configured Slack channels (3-5) on daily schedule
-- [ ] **INGEST-02**: System parses asset updates with naming convention tolerance (hồ ly v3, ho_ly_v3, Ho Ly Version 3)
+- [x] **INGEST-01**: System scrapes configured Slack channels (3-5) on daily schedule
+- [x] **INGEST-02**: System parses asset updates with naming convention tolerance (hồ ly v3, ho_ly_v3, Ho Ly Version 3)
 
 ### Search & Query
 
@@ -21,8 +21,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Version Tracking
 
-- [ ] **VERSION-01**: User can view version history per asset (timeline v1 → v2 → v3 with dates, authors)
-- [ ] **VERSION-02**: Each result shows source attribution (link to original Slack message)
+- [x] **VERSION-01**: User can view version history per asset (timeline v1 → v2 → v3 with dates, authors)
+- [x] **VERSION-02**: Each result shows source attribution (link to original Slack message)
 
 ### Interfaces
 
@@ -67,10 +67,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INGEST-01 | Phase 1 | Pending |
-| INGEST-02 | Phase 1 | Pending |
-| VERSION-01 | Phase 1 | Pending |
-| VERSION-02 | Phase 1 | Pending |
+| INGEST-01 | Phase 1 | Complete |
+| INGEST-02 | Phase 1 | Complete |
+| VERSION-01 | Phase 1 | Complete |
+| VERSION-02 | Phase 1 | Complete |
 | QUERY-01 | Phase 2 | Pending |
 | QUERY-02 | Phase 2 | Pending |
 | QUERY-03 | Phase 2 | Pending |
@@ -85,4 +85,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-01-23*
-*Last updated: 2026-01-23 after roadmap creation*
+*Last updated: 2026-01-23 — Phase 1 requirements complete*

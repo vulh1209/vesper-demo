@@ -10,7 +10,7 @@ Vesper delivers a Slack-integrated asset tracking system in three phases: first 
 - Integer phases (1, 2, 3): Planned milestone work
 - Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
-- [ ] **Phase 1: Foundation & Data Pipeline** - Slack integration, asset extraction, version tracking
+- [x] **Phase 1: Foundation & Data Pipeline** - Slack integration, asset extraction, version tracking ✓
 - [ ] **Phase 2: Intelligence & Query** - Search, filtering, natural language understanding
 - [ ] **Phase 3: User Interfaces** - Slack bot and web dashboard
 
@@ -28,11 +28,11 @@ Vesper delivers a Slack-integrated asset tracking system in three phases: first 
 **Plans**: 5 plans in 4 waves
 
 Plans:
-- [ ] 01-01-PLAN.md — Project setup (TypeScript, dependencies, Docker Compose)
-- [ ] 01-02-PLAN.md — Database schema with Drizzle ORM
-- [ ] 01-03-PLAN.md — Slack client and incremental channel scraper
-- [ ] 01-04-PLAN.md — Vietnamese normalizer, version parser, version tracker
-- [ ] 01-05-PLAN.md — BullMQ job scheduler and CLI tools
+- [x] 01-01-PLAN.md — Project setup (TypeScript, dependencies, Docker Compose)
+- [x] 01-02-PLAN.md — Database schema with Drizzle ORM
+- [x] 01-03-PLAN.md — Slack client and incremental channel scraper
+- [x] 01-04-PLAN.md — Vietnamese normalizer, version parser, version tracker
+- [x] 01-05-PLAN.md — BullMQ job scheduler and CLI tools
 
 ### Phase 2: Intelligence & Query
 **Goal**: Users can search and query assets using natural language in Vietnamese or English
@@ -73,7 +73,7 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Data Pipeline | 0/5 | Planned | - |
+| 1. Foundation & Data Pipeline | 5/5 | Complete ✓ | 2026-01-23 |
 | 2. Intelligence & Query | 0/3 | Planned | - |
 | 3. User Interfaces | 0/4 | Planned | - |
 
@@ -91,4 +91,4 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 ---
 *Roadmap created: 2026-01-23*
-*Last updated: 2026-01-23*
+*Last updated: 2026-01-23 — Phase 1 complete*
