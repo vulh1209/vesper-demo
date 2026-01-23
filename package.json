@@ -14,7 +14,9 @@
     "db:verify": "tsx src/db/verify.ts",
     "slack:test": "tsx src/services/slack/test-connection.ts",
     "worker": "tsx src/jobs/worker.ts",
-    "scheduler": "tsx src/jobs/daily-scrape.ts"
+    "scheduler": "tsx src/jobs/daily-scrape.ts",
+    "cli:scrape": "tsx src/cli/scrape.ts",
+    "cli:history": "tsx src/cli/history.ts"
   },
   "keywords": [],
   "author": "",
