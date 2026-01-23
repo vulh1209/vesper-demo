@@ -69,3 +69,62 @@ export interface IntentExtractionResult {
   originalQuery: string;
   processingTimeMs: number;
 }
+
+// ============================================================
+// HTTP API Types - For Hono API responses (Phase 3)
+// ============================================================
+
+/**
+ * Asset query result for API responses
+ * Simplified view of an asset with basic info
+ */
+export interface AssetQueryResult {
+  id: string;
+  name: string;
+  normalizedName: string;
+  category: string | null;
+  latestVersion: string | null;
+  updatedAt: Date;
+}
+
+/**
+ * Asset detail result with version history
+ * Extended view including all versions
+ */
+export interface AssetDetailResult extends AssetQueryResult {
+  versions: {
+    version: string;
+    author: string | null;
+    authorName: string | null;
+    createdAt: Date;
+    slackPermalink: string | null;
+  }[];
+}
+
+/**
+ * Search parameters for HTTP API
+ */
+export interface SearchParams {
+  query: string;
+  category?: string;
+  limit?: number;
+}
+
+/**
+ * Standard search response for HTTP API
+ */
+export interface SearchResponse {
+  ok: boolean;
+  data: AssetQueryResult[];
+  query: string;
+  matchType: 'exact' | 'fuzzy';
+}
+
+/**
+ * Asset detail response for HTTP API
+ */
+export interface AssetResponse {
+  ok: boolean;
+  data: AssetDetailResult | null;
+  error?: string;
+}
