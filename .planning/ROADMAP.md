@@ -46,7 +46,7 @@ Plans:
 **Plans**: 3 plans in 2 waves
 
 Plans:
-- [ ] 02-01-PLAN.md — Database search layer (pg_trgm extension, fuzzy search service)
+- [x] 02-01-PLAN.md — Database search layer (pg_trgm extension, fuzzy search service)
 - [ ] 02-02-PLAN.md — NLP layer (Vietnamese normalizer, LLM intent extraction)
 - [ ] 02-03-PLAN.md — Query executor (intent dispatch, asset repository, integration)
 
@@ -73,8 +73,8 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Data Pipeline | 5/5 | Complete ✓ | 2026-01-23 |
-| 2. Intelligence & Query | 0/3 | Planned | - |
+| 1. Foundation & Data Pipeline | 5/5 | Complete | 2026-01-23 |
+| 2. Intelligence & Query | 1/3 | In progress | - |
 | 3. User Interfaces | 0/4 | Planned | - |
 
 ## Dependencies
@@ -91,4 +91,4 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 ---
 *Roadmap created: 2026-01-23*
-*Last updated: 2026-01-23 — Phase 1 complete*
+*Last updated: 2026-01-23 — Plan 02-01 complete*
