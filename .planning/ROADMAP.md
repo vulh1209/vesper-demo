@@ -13,7 +13,7 @@ Vesper delivers a Slack-integrated asset tracking system in three phases: first 
 - [x] **Phase 1: Foundation & Data Pipeline** - Slack integration, asset extraction, version tracking
 - [x] **Phase 2: Intelligence & Query** - Search, filtering, natural language understanding
 - [x] **Phase 3: User Interfaces** - Slack bot and web dashboard
-- [ ] **Phase 4: Gemini API Support** - Add Google Gemini as alternative LLM provider
+- [x] **Phase 4: Gemini API Support** - Add Google Gemini as alternative LLM provider
 
 ## Phase Details
 
@@ -80,7 +80,7 @@ Plans:
 
 Plans:
 - [x] 04-01-PLAN.md — LLM provider infrastructure (provider factory, fallback, env config)
-- [ ] 04-02-PLAN.md — Intent extraction integration and provider testing
+- [x] 04-02-PLAN.md — Intent extraction integration and provider testing
 
 ## Progress
 
@@ -92,7 +92,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | 1. Foundation & Data Pipeline | 5/5 | Complete | 2026-01-23 |
 | 2. Intelligence & Query | 3/3 | Complete | 2026-01-23 |
 | 3. User Interfaces | 4/4 | Complete | 2026-01-23 |
-| 4. Gemini API Support | 1/2 | In progress | - |
+| 4. Gemini API Support | 2/2 | Complete | 2026-01-23 |
 
 ## Dependencies
 
@@ -110,4 +110,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 ---
 *Roadmap created: 2026-01-23*
-*Last updated: 2026-01-23 — Completed 04-01-PLAN.md (LLM provider infrastructure)*
+*Last updated: 2026-01-23 — Completed 04-02-PLAN.md (Phase 4 complete, all phases done)*
