@@ -29,6 +29,10 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **UI-01**: Slack bot responds to queries in Slack
 - [x] **UI-02**: Web dashboard shows asset versions and history
 
+### LLM Provider
+
+- [x] **LLM-01**: System supports multiple LLM providers (OpenAI, Gemini) with automatic fallback
+
 ## v2 Requirements
 
 Deferred to future release. Tracked but not in current roadmap.
@@ -77,12 +81,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 | QUERY-04 | Phase 2 | Complete |
 | UI-01 | Phase 3 | Complete |
 | UI-02 | Phase 3 | Complete |
+| LLM-01 | Phase 4 | Complete |
 
 **Coverage:**
-- v1 requirements: 10 total
-- Mapped to phases: 10
+- v1 requirements: 11 total
+- Mapped to phases: 11
 - Unmapped: 0
 
 ---
 *Requirements defined: 2026-01-23*
-*Last updated: 2026-01-23 — Phase 3 requirements complete (v1 complete)*
+*Last updated: 2026-01-23 — Phase 4 requirements complete (milestone complete)*
