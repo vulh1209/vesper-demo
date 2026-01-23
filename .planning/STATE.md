@@ -10,27 +10,27 @@ See: .planning/PROJECT.md (updated 2026-01-23)
 ## Current Position
 
 Phase: 1 of 3 (Foundation & Data Pipeline)
-Plan: 4 of TBD in current phase
+Plan: 5 of TBD in current phase
 Status: In progress
-Last activity: 2026-01-23 - Completed 01-04-PLAN.md (Asset Parser & Processor)
+Last activity: 2026-01-23 - Completed 01-05-PLAN.md (Job Queue & CLI)
 
-Progress: [████░░░░░░] ~40%
+Progress: [█████░░░░░] ~50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
-- Average duration: 4 min
-- Total execution time: 0.25 hours
+- Total plans completed: 5
+- Average duration: 5 min
+- Total execution time: 0.38 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01-foundation-data-pipeline | 4 | 15min | 4min |
+| 01-foundation-data-pipeline | 5 | 23min | 5min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (3min), 01-02 (4min), 01-03 (4min), 01-04 (4min)
+- Last 5 plans: 01-01 (3min), 01-02 (4min), 01-03 (4min), 01-04 (4min), 01-05 (8min)
 - Trend: Consistent
 
 *Updated after each plan completion*
@@ -51,6 +51,9 @@ Recent decisions affecting current work:
 - **Store rawName + normalizedName** - Raw for display, normalized for matching (01-04)
 - **Unicode property escapes** - \p{L} for Vietnamese regex support (01-04)
 - **Duplicate via constraint** - Let Postgres 23505 error handle duplicates (01-04)
+- **BullMQ Job Schedulers API** - upsertJobScheduler for reliable cron scheduling (01-05)
+- **Worker concurrency 1** - Respect Slack rate limits (01-05)
+- **Exponential backoff** - 3 attempts, starting 1 minute delay (01-05)
 
 ### Pending Todos
 
@@ -62,9 +65,9 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-23T13:28Z
-Stopped at: Completed 01-04-PLAN.md (Asset Parser & Processor)
+Last session: 2026-01-23T13:38Z
+Stopped at: Completed 01-05-PLAN.md (Job Queue & CLI)
 Resume file: None
 
 ---
-*Next step: Execute 01-05 (if exists) or continue Phase 1 planning*
+*Next step: Execute 01-06 (if exists) or continue Phase 1 planning*
