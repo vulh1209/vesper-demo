@@ -1,0 +1,87 @@
+# Roadmap: Vesper
+
+## Overview
+
+Vesper delivers a Slack-integrated asset tracking system in three phases: first building the data pipeline that scrapes channels and extracts versions, then adding AI-powered search and natural language queries, and finally exposing both through a Slack bot and web dashboard. The phases build vertically - each delivers working functionality that the next phase enhances.
+
+## Phases
+
+**Phase Numbering:**
+- Integer phases (1, 2, 3): Planned milestone work
+- Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
+
+- [ ] **Phase 1: Foundation & Data Pipeline** - Slack integration, asset extraction, version tracking
+- [ ] **Phase 2: Intelligence & Query** - Search, filtering, natural language understanding
+- [ ] **Phase 3: User Interfaces** - Slack bot and web dashboard
+
+## Phase Details
+
+### Phase 1: Foundation & Data Pipeline
+**Goal**: Raw Slack data flows into a structured asset database with version history
+**Depends on**: IT approval for Slack app (external dependency - pursue in parallel)
+**Requirements**: INGEST-01, INGEST-02, VERSION-01, VERSION-02
+**Success Criteria** (what must be TRUE):
+  1. System scrapes configured Slack channels daily and stores messages
+  2. Asset versions are extracted from messages using naming convention tolerance (variations like "ho ly v3", "Ho_Ly_v3" are recognized)
+  3. User can view version history per asset showing timeline with dates and authors
+  4. Each asset version links back to its source Slack message
+**Plans**: TBD
+
+Plans:
+- [ ] 01-01: TBD
+- [ ] 01-02: TBD
+
+### Phase 2: Intelligence & Query
+**Goal**: Users can search and query assets using natural language in Vietnamese or English
+**Depends on**: Phase 1
+**Requirements**: QUERY-01, QUERY-02, QUERY-03, QUERY-04
+**Success Criteria** (what must be TRUE):
+  1. User can search assets by name with exact and fuzzy matching
+  2. User can filter assets by category (Sound, 3D, 2D, Animation, UI, Story)
+  3. User can ask natural language queries like "Ho ly moi nhat?" and get correct results
+  4. System understands Vietnamese asset names and queries
+**Plans**: TBD
+
+Plans:
+- [ ] 02-01: TBD
+- [ ] 02-02: TBD
+
+### Phase 3: User Interfaces
+**Goal**: Team members access asset tracking via Slack bot and web dashboard
+**Depends on**: Phase 2
+**Requirements**: UI-01, UI-02
+**Success Criteria** (what must be TRUE):
+  1. Slack bot responds to queries in Slack with asset version information
+  2. Web dashboard displays asset versions, history, and search interface
+  3. Both interfaces return consistent results (same data layer)
+**Plans**: TBD
+
+Plans:
+- [ ] 03-01: TBD
+- [ ] 03-02: TBD
+
+## Progress
+
+**Execution Order:**
+Phases execute in numeric order: 1 -> 2 -> 3
+
+| Phase | Plans Complete | Status | Completed |
+|-------|----------------|--------|-----------|
+| 1. Foundation & Data Pipeline | 0/TBD | Not started | - |
+| 2. Intelligence & Query | 0/TBD | Not started | - |
+| 3. User Interfaces | 0/TBD | Not started | - |
+
+## Dependencies
+
+**External:**
+- IT approval for Slack app with required scopes (channels:history, channels:read, chat:write, commands)
+- Must be obtained before Phase 1 can complete Slack integration
+- Recommended: Start IT approval process immediately in parallel with development setup
+
+**Internal:**
+- Phase 2 requires Phase 1 (need data before queries)
+- Phase 3 requires Phase 2 (need query layer before interfaces)
+
+---
+*Roadmap created: 2026-01-23*
+*Last updated: 2026-01-23*
