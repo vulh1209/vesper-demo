@@ -26,8 +26,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Interfaces
 
-- [ ] **UI-01**: Slack bot responds to queries in Slack
-- [ ] **UI-02**: Web dashboard shows asset versions and history
+- [x] **UI-01**: Slack bot responds to queries in Slack
+- [x] **UI-02**: Web dashboard shows asset versions and history
 
 ## v2 Requirements
 
@@ -75,8 +75,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | QUERY-02 | Phase 2 | Complete |
 | QUERY-03 | Phase 2 | Complete |
 | QUERY-04 | Phase 2 | Complete |
-| UI-01 | Phase 3 | Pending |
-| UI-02 | Phase 3 | Pending |
+| UI-01 | Phase 3 | Complete |
+| UI-02 | Phase 3 | Complete |
 
 **Coverage:**
 - v1 requirements: 10 total
@@ -85,4 +85,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-01-23*
-*Last updated: 2026-01-23 — Phase 2 requirements complete*
+*Last updated: 2026-01-23 — Phase 3 requirements complete (v1 complete)*
