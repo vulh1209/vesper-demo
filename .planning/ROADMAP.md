@@ -25,11 +25,14 @@ Vesper delivers a Slack-integrated asset tracking system in three phases: first 
   2. Asset versions are extracted from messages using naming convention tolerance (variations like "ho ly v3", "Ho_Ly_v3" are recognized)
   3. User can view version history per asset showing timeline with dates and authors
   4. Each asset version links back to its source Slack message
-**Plans**: TBD
+**Plans**: 5 plans in 4 waves
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
+- [ ] 01-01-PLAN.md — Project setup (TypeScript, dependencies, Docker Compose)
+- [ ] 01-02-PLAN.md — Database schema with Drizzle ORM
+- [ ] 01-03-PLAN.md — Slack client and incremental channel scraper
+- [ ] 01-04-PLAN.md — Vietnamese normalizer, version parser, version tracker
+- [ ] 01-05-PLAN.md — BullMQ job scheduler and CLI tools
 
 ### Phase 2: Intelligence & Query
 **Goal**: Users can search and query assets using natural language in Vietnamese or English
@@ -67,7 +70,7 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Data Pipeline | 0/TBD | Not started | - |
+| 1. Foundation & Data Pipeline | 0/5 | Planned | - |
 | 2. Intelligence & Query | 0/TBD | Not started | - |
 | 3. User Interfaces | 0/TBD | Not started | - |
 
