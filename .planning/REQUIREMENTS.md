@@ -14,10 +14,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Search & Query
 
-- [ ] **QUERY-01**: User can search assets by name (exact + fuzzy match)
-- [ ] **QUERY-02**: User can filter assets by category (Sound, 3D, 2D, Animation, UI, Story)
-- [ ] **QUERY-03**: User can ask natural language queries ("Hồ ly mới nhất?")
-- [ ] **QUERY-04**: Bot understands Vietnamese queries and asset names
+- [x] **QUERY-01**: User can search assets by name (exact + fuzzy match)
+- [x] **QUERY-02**: User can filter assets by category (Sound, 3D, 2D, Animation, UI, Story)
+- [x] **QUERY-03**: User can ask natural language queries ("Hồ ly mới nhất?")
+- [x] **QUERY-04**: Bot understands Vietnamese queries and asset names
 
 ### Version Tracking
 
@@ -71,10 +71,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INGEST-02 | Phase 1 | Complete |
 | VERSION-01 | Phase 1 | Complete |
 | VERSION-02 | Phase 1 | Complete |
-| QUERY-01 | Phase 2 | Pending |
-| QUERY-02 | Phase 2 | Pending |
-| QUERY-03 | Phase 2 | Pending |
-| QUERY-04 | Phase 2 | Pending |
+| QUERY-01 | Phase 2 | Complete |
+| QUERY-02 | Phase 2 | Complete |
+| QUERY-03 | Phase 2 | Complete |
+| QUERY-04 | Phase 2 | Complete |
 | UI-01 | Phase 3 | Pending |
 | UI-02 | Phase 3 | Pending |
 
@@ -85,4 +85,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-01-23*
-*Last updated: 2026-01-23 — Phase 1 requirements complete*
+*Last updated: 2026-01-23 — Phase 2 requirements complete*
