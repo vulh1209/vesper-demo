@@ -21,7 +21,10 @@
     "test:query": "tsx src/services/query/test.ts",
     "api": "tsx src/api/server.ts",
     "bot": "tsx src/bot/index.ts",
-    "dashboard": "cd dashboard && npm run dev"
+    "dashboard": "cd dashboard && npm run dev",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:integration": "vitest run tests/integration"
   },
   "keywords": [],
   "author": "",
@@ -45,8 +48,10 @@
   },
   "devDependencies": {
     "@types/node": "^25.0.10",
+    "@vitest/coverage-v8": "^4.0.18",
     "drizzle-kit": "^0.31.8",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
   }
 }
