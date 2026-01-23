@@ -1,14 +1,12 @@
-# Vesper
+# Vesper — Slack Asset Tracker
 
 ## What This Is
 
-An AI-powered audio asset search engine for managing a massive personal audio library (100k+ files). It analyzes audio content using local AI models on Apple Silicon, builds a semantic index, and enables natural language search — so searching "rain" finds files containing rain sounds regardless of cryptic filenames like `aa.mp3`.
+A Slack-integrated asset version tracking system for game development teams. Automatically scrapes multiple Slack channels, uses AI to summarize daily updates, and provides both a Slack bot (natural language queries) and web dashboard so team members can instantly find the latest version of any asset — characters, sounds, concepts, animations, UI designs.
 
 ## Core Value
 
-**Fast, semantic search across audio files by what they contain, not what they're named.**
-
-If the filenames are meaningless but you can describe what you're looking for ("birds chirping", "ambient rain", "upbeat music"), Vesper finds it.
+**Reduce miscommunication** — everyone on the team always knows and uses the correct/latest version of assets. No more scrolling through Slack history to find "which Hồ Ly is the newest?"
 
 ## Requirements
 
@@ -18,48 +16,57 @@ If the filenames are meaningless but you can describe what you're looking for ("
 
 ### Active
 
-- [ ] System analyzes audio files to detect content (sounds, music type, speech)
-- [ ] System builds searchable index mapping detected content to files
-- [ ] User can search by natural language description
-- [ ] User can preview/play audio files from search results
-- [ ] User can open file location in Finder
-- [ ] User can edit metadata/tags for files
-- [ ] System handles 100k+ files efficiently
-- [ ] AI analysis runs locally on Apple Silicon (no cloud APIs)
-- [ ] System incrementally indexes new files without full re-scan
+- [ ] Slack channel scraping (3-5 channels, scheduled daily)
+- [ ] AI-powered summarization of daily updates
+- [ ] Version extraction using team's existing naming convention
+- [ ] Asset tracking across 6 categories (sound, 2D concept, 3D model, story, animation, UI)
+- [ ] Slack bot for natural language queries ("Hồ ly mới nhất?")
+- [ ] Web dashboard showing daily summaries and version history
+- [ ] Search/browse assets by name or category
 
 ### Out of Scope
 
-- Multi-user/team features — personal tool only
-- Cloud hosting — runs locally
-- Mobile app — desktop/web only
-- Real-time transcription — batch indexing is fine
-- Audio editing — this is search, not a DAW
+- Real-time sync (daily batch is sufficient) — keep MVP simple
+- File storage/hosting — Slack already hosts files, we just track metadata
+- Approval workflows — this is read-only tracking, not gatekeeping
+- Mobile app — web + Slack bot covers all use cases
+- Multi-workspace — single Slack workspace for now
 
 ## Context
 
-**The problem:** Audio asset libraries accumulate files with cryptic, inconsistent naming. Windows/Finder search only matches filenames. Finding "that rain sound" means manually listening through files or maintaining spreadsheets. This doesn't scale to 100k+ files.
+**Team structure:**
+- 10+ người trong team game development
+- Nhiều departments: art (2D/3D), sound, narrative, animation, UI/UX
+- Mỗi department có Slack channel riêng để post updates
 
-**The solution:** AI audio analysis (audio classification, sound event detection) can identify what's in each file. Combined with vector/semantic search, users can query by description and find relevant files instantly.
+**Current workflow:**
+- Team post updates vào Slack channels theo naming convention có sẵn
+- Khi cần tìm version mới nhất, phải scroll Slack → tốn thời gian, dễ nhầm
+- Miscommunication xảy ra khi người dùng version cũ
 
-**Technical environment:**
-- macOS with Apple Silicon (M1/M2/M3)
-- Local-first architecture — no cloud dependencies
-- Large file count requires efficient indexing and search
+**Asset structure:**
+- Assets có tên (e.g., "Hồ Ly", "Boss Theme", "Main Menu")
+- Mỗi asset có thể có versions ở nhiều categories (3D model, 2D concept, animation...)
+- Team đã có naming convention khi post (e.g., "[Hồ Ly v2.1]")
+
+**Slack access:**
+- Cần IT/admin approve để tạo Slack app
+- Đây là dependency cần giải quyết sớm
 
 ## Constraints
 
-- **Hardware**: Must run efficiently on Apple Silicon with 8-16GB unified memory
-- **Privacy**: All processing local — audio files never leave the machine
-- **Scale**: Must handle 100k+ files without degrading search performance
-- **Incremental**: Adding new files shouldn't require re-indexing everything
+- **Slack API**: Cần IT approval để tạo Slack app — liên hệ IT sớm trong Phase 1
+- **Timeline**: MVP càng sớm càng tốt — prioritize working software over perfect features
+- **AI Model**: Cần LLM cho summarization và natural language understanding — OpenAI hoặc Claude API
 
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Local AI vs Cloud API | User wants no cloud dependencies, has Apple Silicon | — Pending |
-| Web UI vs Desktop app | Web is simpler, works in any browser, no app packaging | — Pending |
+| Slack bot + Web (not just one) | Bot cho quick queries trong workflow, Web cho browse/history | — Pending |
+| Natural language queries | Team không muốn học commands, hỏi tự nhiên dễ adopt hơn | — Pending |
+| Daily batch (not real-time) | Đủ cho use case, đơn giản hơn nhiều | — Pending |
+| 6 categories fixed | Sound, 2D, 3D, Story, Animation, UI — covers team's needs | — Pending |
 
 ---
 *Last updated: 2026-01-23 after initialization*
