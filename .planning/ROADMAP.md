@@ -43,11 +43,12 @@ Plans:
   2. User can filter assets by category (Sound, 3D, 2D, Animation, UI, Story)
   3. User can ask natural language queries like "Ho ly moi nhat?" and get correct results
   4. System understands Vietnamese asset names and queries
-**Plans**: TBD
+**Plans**: 3 plans in 2 waves
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
+- [ ] 02-01-PLAN.md — Database search layer (pg_trgm extension, fuzzy search service)
+- [ ] 02-02-PLAN.md — NLP layer (Vietnamese normalizer, LLM intent extraction)
+- [ ] 02-03-PLAN.md — Query executor (intent dispatch, asset repository, integration)
 
 ### Phase 3: User Interfaces
 **Goal**: Team members access asset tracking via Slack bot and web dashboard
@@ -71,7 +72,7 @@ Phases execute in numeric order: 1 -> 2 -> 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Data Pipeline | 0/5 | Planned | - |
-| 2. Intelligence & Query | 0/TBD | Not started | - |
+| 2. Intelligence & Query | 0/3 | Planned | - |
 | 3. User Interfaces | 0/TBD | Not started | - |
 
 ## Dependencies
@@ -80,6 +81,7 @@ Phases execute in numeric order: 1 -> 2 -> 3
 - IT approval for Slack app with required scopes (channels:history, channels:read, chat:write, commands)
 - Must be obtained before Phase 1 can complete Slack integration
 - Recommended: Start IT approval process immediately in parallel with development setup
+- OpenAI API key for Phase 2 LLM intent extraction (OPENAI_API_KEY)
 
 **Internal:**
 - Phase 2 requires Phase 1 (need data before queries)
