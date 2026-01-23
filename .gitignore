@@ -24,3 +24,19 @@ npm-debug.log*
 
 # Test coverage
 coverage/
+
+# Drizzle
+drizzle/meta/_journal.json.bak
+
+# Turbo
+.turbo/
+
+# TypeScript
+*.tsbuildinfo
+
+# Temporary files
+tmp/
+temp/
+
+# Claude
+.claude/

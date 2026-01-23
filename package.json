@@ -17,7 +17,8 @@
     "worker": "tsx src/jobs/worker.ts",
     "scheduler": "tsx src/jobs/daily-scrape.ts",
     "cli:scrape": "tsx src/cli/scrape.ts",
-    "cli:history": "tsx src/cli/history.ts"
+    "cli:history": "tsx src/cli/history.ts",
+    "test:query": "tsx src/services/query/test.ts"
   },
   "keywords": [],
   "author": "",
