@@ -58,6 +58,8 @@ Recent decisions affecting current work:
 - **pg_trgm over PGroonga** - Simpler, sufficient for asset name matching (02-01)
 - **Exact match first pattern** - Try btree before fuzzy for 10x speed (02-01)
 - **minSimilarity 0.3 default** - Balances recall vs precision (02-01)
+- **gpt-4o-mini for intent** - Cost-effective at ~$0.00015/query (02-02)
+- **generateObject API** - Zod schema for structured LLM output (02-02)
 
 ### Pending Todos
 
@@ -69,8 +71,8 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-23T13:43:21Z
-Stopped at: Completed 02-01-PLAN.md
+Last session: 2026-01-23T13:43:52Z
+Stopped at: Completed 02-02-PLAN.md
 Resume file: None
 
 ---
