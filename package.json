@@ -12,7 +12,9 @@
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "db:verify": "tsx src/db/verify.ts",
-    "slack:test": "tsx src/services/slack/test-connection.ts"
+    "slack:test": "tsx src/services/slack/test-connection.ts",
+    "worker": "tsx src/jobs/worker.ts",
+    "scheduler": "tsx src/jobs/daily-scrape.ts"
   },
   "keywords": [],
   "author": "",
