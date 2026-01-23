@@ -1,6 +1,6 @@
 // src/services/query/intent.ts
 import { generateObject } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { getModelWithFallback } from '../../config/llm.js';
 import { QueryIntentSchema, type QueryIntent, type IntentExtractionResult } from './types';
 import { normalizeVietnamese } from '../nlp/normalizer';
 
@@ -50,8 +50,8 @@ Parse the user's query (Vietnamese or English) into structured intent.
 /**
  * Extract structured intent from natural language query
  *
- * Uses OpenAI gpt-4o-mini for cost-effective intent extraction.
- * ~$0.00015 per query (500 tokens average).
+ * Uses configured LLM provider (Gemini or OpenAI) with automatic fallback.
+ * ~$0.00005/query with Gemini, ~$0.00015/query with OpenAI (500 tokens average).
  *
  * @param userQuery - Natural language query in Vietnamese or English
  * @returns Structured intent with asset name, category, and query type
@@ -71,7 +71,7 @@ export async function extractIntent(userQuery: string): Promise<IntentExtraction
   const normalizedQuery = normalizeVietnamese(userQuery);
 
   const { object } = await generateObject({
-    model: openai('gpt-4o-mini'),
+    model: getModelWithFallback(),
     schema: QueryIntentSchema,
     system: SYSTEM_PROMPT,
     prompt: `Parse this query: "${userQuery}"
@@ -100,10 +100,10 @@ export async function extractIntentSafe(userQuery: string): Promise<IntentExtrac
   } catch (error) {
     console.error('Intent extraction failed:', error);
 
-    // Return unknown intent on error
+    // Return search intent on error (graceful degradation - treat query as potential asset name)
     return {
       intent: {
-        intent: 'unknown',
+        intent: 'search',
         assetName: normalizeVietnamese(userQuery),  // Use query as potential asset name
         category: null,
         limit: null,
