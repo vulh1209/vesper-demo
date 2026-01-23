@@ -19,7 +19,9 @@
     "cli:scrape": "tsx src/cli/scrape.ts",
     "cli:history": "tsx src/cli/history.ts",
     "test:query": "tsx src/services/query/test.ts",
-    "api": "tsx src/api/server.ts"
+    "api": "tsx src/api/server.ts",
+    "bot": "tsx src/bot/index.ts",
+    "dashboard": "cd dashboard && npm run dev"
   },
   "keywords": [],
   "author": "",
