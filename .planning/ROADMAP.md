@@ -79,7 +79,7 @@ Plans:
 **Plans**: 2 plans in 2 waves
 
 Plans:
-- [ ] 04-01-PLAN.md — LLM provider infrastructure (provider factory, fallback, env config)
+- [x] 04-01-PLAN.md — LLM provider infrastructure (provider factory, fallback, env config)
 - [ ] 04-02-PLAN.md — Intent extraction integration and provider testing
 
 ## Progress
@@ -92,7 +92,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | 1. Foundation & Data Pipeline | 5/5 | Complete | 2026-01-23 |
 | 2. Intelligence & Query | 3/3 | Complete | 2026-01-23 |
 | 3. User Interfaces | 4/4 | Complete | 2026-01-23 |
-| 4. Gemini API Support | 0/2 | Planned | - |
+| 4. Gemini API Support | 1/2 | In progress | - |
 
 ## Dependencies
 
@@ -110,4 +110,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 ---
 *Roadmap created: 2026-01-23*
-*Last updated: 2026-01-23 — Phase 4 planning complete (2 plans in 2 waves)*
+*Last updated: 2026-01-23 — Completed 04-01-PLAN.md (LLM provider infrastructure)*
