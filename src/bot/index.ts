@@ -5,6 +5,7 @@ import { app } from './app.js';
 import './commands/vesper.js';
 import './events/app-mention.js';
 import './events/dm-message.js';
+import './events/app-home-opened.js';
 
 const PORT = Number(process.env.BOT_PORT) || 3000;
 
