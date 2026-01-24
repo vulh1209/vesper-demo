@@ -64,3 +64,35 @@ export async function triggerScrape(): Promise<{ ok: boolean; jobId?: string }> 
   const res = await fetch(`${API_BASE}/api/admin/jobs/trigger`, { method: 'POST' });
   return res.json();
 }
+
+export interface HealthCheck {
+  status: 'healthy' | 'degraded' | 'unhealthy';
+  timestamp: string;
+  checks: {
+    redis: { status: 'up' | 'down'; latencyMs?: number; error?: string };
+    database: { status: 'up' | 'down'; latencyMs?: number; error?: string };
+  };
+}
+
+export async function getHealth(): Promise<HealthCheck | null> {
+  try {
+    const res = await fetch(`${API_BASE}/api/admin/health`, { cache: 'no-store' });
+    return res.json();
+  } catch {
+    return null;
+  }
+}
+
+export interface RecentJob {
+  id: string;
+  name: string;
+  finishedOn: number | null;
+  failedReason: string | null;
+  data: Record<string, unknown>;
+}
+
+export async function getRecentJobs(): Promise<{ completed: RecentJob[]; failed: RecentJob[] } | null> {
+  const res = await fetch(`${API_BASE}/api/admin/jobs/recent`, { cache: 'no-store' });
+  const data = await res.json();
+  return data.ok ? data.data : null;
+}
