@@ -6,6 +6,7 @@
  */
 import { Hono } from 'hono';
 import assets from './assets.js';
+import stats from './stats.js';
 import channels from './admin/channels.js';
 import jobs from './admin/jobs.js';
 import health from './admin/health.js';
@@ -15,6 +16,9 @@ const api = new Hono();
 
 // Mount asset routes at /assets
 api.route('/assets', assets);
+
+// Mount stats route at /stats
+api.route('/stats', stats);
 
 // Admin routes
 api.route('/admin/channels', channels);
