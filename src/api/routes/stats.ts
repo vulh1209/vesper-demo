@@ -41,9 +41,10 @@ app.get('/', async (c) => {
     .from(channels);
 
   // Get 5 most recent asset versions with asset info
+  // Use assetVersions.id (not assets.id) to ensure unique keys for React rendering
   const recentVersions = await db
     .select({
-      id: assets.id,
+      id: assetVersions.id,
       name: assets.rawName,
       version: assetVersions.version,
       createdAt: assetVersions.createdAt,
