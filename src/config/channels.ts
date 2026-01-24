@@ -1,6 +1,6 @@
 import { db } from '../db/client.js';
-import { channels } from '../db/schema.js';
-import { eq } from 'drizzle-orm';
+import { channels, slackMessages } from '../db/schema.js';
+import { eq, count, sql } from 'drizzle-orm';
 
 export interface ChannelConfig {
   id: string;
@@ -88,4 +88,49 @@ export async function updateChannelSyncState(
       updatedAt: new Date(),
     })
     .where(eq(channels.id, channelId));
+}
+
+/**
+ * Remove a channel from tracking
+ */
+export async function removeChannel(id: string): Promise<boolean> {
+  // First check if channel exists
+  const [existing] = await db
+    .select({ id: channels.id })
+    .from(channels)
+    .where(eq(channels.id, id));
+
+  if (!existing) {
+    return false;
+  }
+
+  await db.delete(channels).where(eq(channels.id, id));
+  return true;
+}
+
+/**
+ * Get channel with message count stats
+ */
+export async function getChannelWithStats(id: string): Promise<{
+  channel: typeof channels.$inferSelect | null;
+  messageCount: number;
+}> {
+  const [channel] = await db
+    .select()
+    .from(channels)
+    .where(eq(channels.id, id));
+
+  if (!channel) {
+    return { channel: null, messageCount: 0 };
+  }
+
+  const countResult = await db
+    .select({ value: count() })
+    .from(slackMessages)
+    .where(eq(slackMessages.channelId, id));
+
+  return {
+    channel,
+    messageCount: countResult[0]?.value ?? 0,
+  };
 }
