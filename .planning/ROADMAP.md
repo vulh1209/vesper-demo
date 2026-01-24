@@ -15,7 +15,7 @@ Vesper delivers a Slack-integrated asset tracking system in three phases: first 
 - [x] **Phase 3: User Interfaces** - Slack bot and web dashboard
 - [x] **Phase 4: Gemini API Support** - Add Google Gemini as alternative LLM provider
 - [x] **Phase 5: Admin Dashboard** - Channel management UI and system configuration
-- [ ] **Phase 6: Support Chat DM with Bot** - Enable direct message conversations with the Slack bot
+- [x] **Phase 6: Support Chat DM with Bot** - Enable direct message conversations with the Slack bot
 
 ## Phase Details
 
@@ -112,8 +112,8 @@ Plans:
 **Plans**: 2 plans in 2 waves
 
 Plans:
-- [ ] 06-01-PLAN.md — DM message handler with welcome view
-- [ ] 06-02-PLAN.md — First-time user onboarding via app_home_opened
+- [x] 06-01-PLAN.md — DM message handler with welcome view
+- [x] 06-02-PLAN.md — First-time user onboarding via app_home_opened
 
 ## Progress
 
@@ -127,7 +127,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 | 3. User Interfaces | 4/4 | Complete | 2026-01-23 |
 | 4. Gemini API Support | 2/2 | Complete | 2026-01-23 |
 | 5. Admin Dashboard | 3/3 | Complete | 2026-01-24 |
-| 6. Support Chat DM with Bot | 0/2 | Not Started | - |
+| 6. Support Chat DM with Bot | 2/2 | Complete | 2026-01-24 |
 
 ## Dependencies
 
@@ -147,4 +147,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 
 ---
 *Roadmap created: 2026-01-23*
-*Last updated: 2026-01-24 — Phase 5 complete*
+*Last updated: 2026-01-24 — Milestone complete (all 6 phases)*

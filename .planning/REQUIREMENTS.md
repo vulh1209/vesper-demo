@@ -38,6 +38,10 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **ADMIN-01**: Admin can add/remove Slack channels to track via web UI
 - [x] **ADMIN-02**: Admin can view system health (job queue status, sync status, health checks)
 
+### Bot Enhancement
+
+- [x] **BOT-02**: Users can DM the bot directly with first-time onboarding
+
 ## v2 Requirements
 
 Deferred to future release. Tracked but not in current roadmap.
@@ -89,12 +93,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LLM-01 | Phase 4 | Complete |
 | ADMIN-01 | Phase 5 | Complete |
 | ADMIN-02 | Phase 5 | Complete |
+| BOT-02 | Phase 6 | Complete |
 
 **Coverage:**
-- v1 requirements: 13 total
-- Mapped to phases: 13
+- v1 requirements: 14 total
+- Mapped to phases: 14
 - Unmapped: 0
 
 ---
 *Requirements defined: 2026-01-23*
-*Last updated: 2026-01-24 — Phase 5 requirements complete*
+*Last updated: 2026-01-24 — Milestone complete (all 6 phases)*
