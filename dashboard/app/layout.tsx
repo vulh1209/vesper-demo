@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Link from 'next/link';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin', 'vietnamese'] });
@@ -18,8 +19,15 @@ export default function RootLayout({
     <html lang="vi">
       <body className={inter.className}>
         <header className="border-b">
-          <div className="container mx-auto px-4 py-4">
-            <h1 className="text-xl font-bold">Vesper</h1>
+          <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+            <Link href="/" className="text-xl font-bold hover:opacity-80">
+              Vesper
+            </Link>
+            <nav>
+              <Link href="/admin" className="text-sm hover:underline">
+                Admin
+              </Link>
+            </nav>
           </div>
         </header>
         <main>{children}</main>

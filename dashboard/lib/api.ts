@@ -1,5 +1,22 @@
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
 
+export interface DashboardStats {
+  totalAssets: number;
+  lastSyncAt: string | null;
+  recentAssets: Array<{
+    id: string;
+    name: string;
+    version: string;
+    createdAt: string;
+  }>;
+}
+
+export async function getStats(): Promise<DashboardStats> {
+  const res = await fetch(`${API_BASE}/api/stats`);
+  const json = await res.json();
+  return json.data;
+}
+
 export interface AssetQueryResult {
   id: string;
   name: string;
