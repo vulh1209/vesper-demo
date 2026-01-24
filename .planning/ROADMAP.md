@@ -14,6 +14,7 @@ Vesper delivers a Slack-integrated asset tracking system in three phases: first 
 - [x] **Phase 2: Intelligence & Query** - Search, filtering, natural language understanding
 - [x] **Phase 3: User Interfaces** - Slack bot and web dashboard
 - [x] **Phase 4: Gemini API Support** - Add Google Gemini as alternative LLM provider
+- [ ] **Phase 5: Admin Dashboard** - Channel management UI and system configuration
 
 ## Phase Details
 
@@ -82,10 +83,26 @@ Plans:
 - [x] 04-01-PLAN.md — LLM provider infrastructure (provider factory, fallback, env config)
 - [x] 04-02-PLAN.md — Intent extraction integration and provider testing
 
+### Phase 5: Admin Dashboard
+**Goal**: Web UI for managing channels, viewing system status, and configuring settings
+**Depends on**: Phase 3
+**Requirements**: ADMIN-01, ADMIN-02
+**Success Criteria** (what must be TRUE):
+  1. Admin can add/remove Slack channels to track via web UI
+  2. Admin can view channel sync status (last sync time, message count)
+  3. Admin can trigger manual channel scrape from UI
+  4. Admin can view system health (job queue status, error logs)
+**Plans**: 3 plans in 2 waves
+
+Plans:
+- [ ] 05-01-PLAN.md — Channel management API (CRUD endpoints, sync status, job queue API)
+- [ ] 05-02-PLAN.md — Admin UI pages (channel list, add/edit forms, sync controls)
+- [ ] 05-03-PLAN.md — System status dashboard (bull-board integration, health checks)
+
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3 -> 4
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -93,6 +110,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | 2. Intelligence & Query | 3/3 | Complete | 2026-01-23 |
 | 3. User Interfaces | 4/4 | Complete | 2026-01-23 |
 | 4. Gemini API Support | 2/2 | Complete | 2026-01-23 |
+| 5. Admin Dashboard | 0/3 | Not Started | - |
 
 ## Dependencies
 
@@ -107,7 +125,8 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 - Phase 2 requires Phase 1 (need data before queries)
 - Phase 3 requires Phase 2 (need query layer before interfaces)
 - Phase 4 requires Phase 2 (extends LLM layer)
+- Phase 5 requires Phase 3 (extends web dashboard)
 
 ---
 *Roadmap created: 2026-01-23*
-*Last updated: 2026-01-23 — Completed 04-02-PLAN.md (Phase 4 complete, all phases done)*
+*Last updated: 2026-01-24 — Phase 5 plans created (3 plans in 2 waves)*
