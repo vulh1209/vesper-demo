@@ -15,6 +15,7 @@ Vesper delivers a Slack-integrated asset tracking system in three phases: first 
 - [x] **Phase 3: User Interfaces** - Slack bot and web dashboard
 - [x] **Phase 4: Gemini API Support** - Add Google Gemini as alternative LLM provider
 - [ ] **Phase 5: Admin Dashboard** - Channel management UI and system configuration
+- [ ] **Phase 6: Support Chat DM with Bot** - Enable direct message conversations with the Slack bot
 
 ## Phase Details
 
@@ -99,10 +100,25 @@ Plans:
 - [ ] 05-02-PLAN.md — Admin UI pages (channel list, add/edit forms, sync controls)
 - [ ] 05-03-PLAN.md — System status dashboard (bull-board integration, health checks)
 
+### Phase 6: Support Chat DM with Bot
+**Goal:** Enable direct message conversations with the Slack bot in addition to current channel tagging
+**Depends on:** Phase 3
+**Requirements:** BOT-02
+**Success Criteria** (what must be TRUE):
+  1. Users can DM the bot directly to query assets
+  2. Bot responds to DMs with the same query capabilities as channel mentions
+  3. DM conversations maintain context (optional: conversation history)
+  4. Bot provides helpful onboarding message on first DM
+**Plans**: 2 plans in 2 waves
+
+Plans:
+- [ ] 06-01-PLAN.md — DM message handler with welcome view
+- [ ] 06-02-PLAN.md — First-time user onboarding via app_home_opened
+
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -111,6 +127,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 3. User Interfaces | 4/4 | Complete | 2026-01-23 |
 | 4. Gemini API Support | 2/2 | Complete | 2026-01-23 |
 | 5. Admin Dashboard | 0/3 | Not Started | - |
+| 6. Support Chat DM with Bot | 0/2 | Not Started | - |
 
 ## Dependencies
 
@@ -126,7 +143,8 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 - Phase 3 requires Phase 2 (need query layer before interfaces)
 - Phase 4 requires Phase 2 (extends LLM layer)
 - Phase 5 requires Phase 3 (extends web dashboard)
+- Phase 6 requires Phase 3 (extends Slack bot)
 
 ---
 *Roadmap created: 2026-01-23*
-*Last updated: 2026-01-24 — Phase 5 plans created (3 plans in 2 waves)*
+*Last updated: 2026-01-24 — Phase 6 planned (2 plans in 2 waves)*
