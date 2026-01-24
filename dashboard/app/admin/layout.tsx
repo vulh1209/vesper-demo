@@ -1,9 +1,16 @@
 import Link from 'next/link';
+import { MobileMenu } from '@/components/navigation/mobile-menu';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen">
-      <nav className="w-56 border-r bg-muted/40 p-4">
+      {/* Mobile header - visible only on mobile */}
+      <div className="md:hidden fixed top-14 left-0 right-0 border-b bg-background p-4 z-10">
+        <MobileMenu />
+      </div>
+
+      {/* Desktop sidebar - hidden on mobile */}
+      <nav className="hidden md:block w-56 border-r bg-muted/40 p-4">
         <h2 className="font-semibold mb-4">Admin</h2>
         <ul className="space-y-2">
           <li><Link href="/admin" className="block py-1 hover:underline">Overview</Link></li>
@@ -21,7 +28,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </a>
         </div>
       </nav>
-      <main className="flex-1 p-6">{children}</main>
+
+      {/* Main content - extra top padding on mobile for fixed header */}
+      <main className="flex-1 p-6 pt-20 md:pt-6">{children}</main>
     </div>
   );
 }
