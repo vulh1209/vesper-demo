@@ -14,7 +14,7 @@ Vesper delivers a Slack-integrated asset tracking system in three phases: first 
 - [x] **Phase 2: Intelligence & Query** - Search, filtering, natural language understanding
 - [x] **Phase 3: User Interfaces** - Slack bot and web dashboard
 - [x] **Phase 4: Gemini API Support** - Add Google Gemini as alternative LLM provider
-- [ ] **Phase 5: Admin Dashboard** - Channel management UI and system configuration
+- [x] **Phase 5: Admin Dashboard** - Channel management UI and system configuration
 - [ ] **Phase 6: Support Chat DM with Bot** - Enable direct message conversations with the Slack bot
 
 ## Phase Details
@@ -96,9 +96,9 @@ Plans:
 **Plans**: 3 plans in 2 waves
 
 Plans:
-- [ ] 05-01-PLAN.md — Channel management API (CRUD endpoints, sync status, job queue API)
-- [ ] 05-02-PLAN.md — Admin UI pages (channel list, add/edit forms, sync controls)
-- [ ] 05-03-PLAN.md — System status dashboard (bull-board integration, health checks)
+- [x] 05-01-PLAN.md — Channel management API (CRUD endpoints, sync status, job queue API)
+- [x] 05-02-PLAN.md — Admin UI pages (channel list, add/edit forms, sync controls)
+- [x] 05-03-PLAN.md — System status dashboard (bull-board integration, health checks)
 
 ### Phase 6: Support Chat DM with Bot
 **Goal:** Enable direct message conversations with the Slack bot in addition to current channel tagging
@@ -126,7 +126,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 | 2. Intelligence & Query | 3/3 | Complete | 2026-01-23 |
 | 3. User Interfaces | 4/4 | Complete | 2026-01-23 |
 | 4. Gemini API Support | 2/2 | Complete | 2026-01-23 |
-| 5. Admin Dashboard | 0/3 | Not Started | - |
+| 5. Admin Dashboard | 3/3 | Complete | 2026-01-24 |
 | 6. Support Chat DM with Bot | 0/2 | Not Started | - |
 
 ## Dependencies
@@ -147,4 +147,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 
 ---
 *Roadmap created: 2026-01-23*
-*Last updated: 2026-01-24 — Phase 6 planned (2 plans in 2 waves)*
+*Last updated: 2026-01-24 — Phase 5 complete*

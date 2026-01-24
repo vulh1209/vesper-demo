@@ -33,6 +33,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **LLM-01**: System supports multiple LLM providers (OpenAI, Gemini) with automatic fallback
 
+### Admin
+
+- [x] **ADMIN-01**: Admin can add/remove Slack channels to track via web UI
+- [x] **ADMIN-02**: Admin can view system health (job queue status, sync status, health checks)
+
 ## v2 Requirements
 
 Deferred to future release. Tracked but not in current roadmap.
@@ -82,12 +87,14 @@ Which phases cover which requirements. Updated during roadmap creation.
 | UI-01 | Phase 3 | Complete |
 | UI-02 | Phase 3 | Complete |
 | LLM-01 | Phase 4 | Complete |
+| ADMIN-01 | Phase 5 | Complete |
+| ADMIN-02 | Phase 5 | Complete |
 
 **Coverage:**
-- v1 requirements: 11 total
-- Mapped to phases: 11
+- v1 requirements: 13 total
+- Mapped to phases: 13
 - Unmapped: 0
 
 ---
 *Requirements defined: 2026-01-23*
-*Last updated: 2026-01-23 — Phase 4 requirements complete (milestone complete)*
+*Last updated: 2026-01-24 — Phase 5 requirements complete*
