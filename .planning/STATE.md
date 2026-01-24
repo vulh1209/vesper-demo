@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-23)
 
 **Core value:** Reduce miscommunication - everyone on the team always knows and uses the correct/latest version of assets
-**Current focus:** Phase 6 - Support Chat DM with Bot (Next)
+**Current focus:** Phase 6 - Support Chat DM with Bot
 
 ## Current Position
 
-Phase: 5 of 6 (Admin Dashboard)
-Plan: 3 of 3 in current phase
-Status: Phase complete
-Last activity: 2026-01-24 - Completed 05-03-PLAN.md
+Phase: 6 of 6 (Support Chat DM with Bot)
+Plan: 1 of 2 in current phase
+Status: In progress
+Last activity: 2026-01-24 - Completed 06-01-PLAN.md
 
-Progress: [█████████████░░] 85% (17/19 plans)
+Progress: [██████████████░] 90% (18/19 plans)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 17
+- Total plans completed: 18
 - Average duration: 4 min
-- Total execution time: 1.12 hours
+- Total execution time: 1.17 hours
 
 **By Phase:**
 
@@ -32,9 +32,10 @@ Progress: [█████████████░░] 85% (17/19 plans)
 | 03-user-interfaces | 4 | 20min | 5min |
 | 04-gemini-api-support | 2 | 6min | 3min |
 | 05-admin-dashboard | 3 | 11min | 3.7min |
+| 06-support-chat-dm-with-bot | 1 | 3min | 3min |
 
 **Recent Trend:**
-- Last 5 plans: 04-01 (3min), 04-02 (3min), 05-01 (5min), 05-02 (3min), 05-03 (3min)
+- Last 5 plans: 04-02 (3min), 05-01 (5min), 05-02 (3min), 05-03 (3min), 06-01 (3min)
 - Trend: Consistent
 
 *Updated after each plan completion*
@@ -87,6 +88,9 @@ Recent decisions affecting current work:
 - **Bull-board with HonoAdapter** - Native integration without Express adapter overhead (05-03)
 - **Health status aggregation** - healthy/degraded/unhealthy with 503 for load balancer (05-03)
 - **Latency tracking in health checks** - Included for performance monitoring (05-03)
+- **channel_type guard for DM filtering** - Clean separation of DM vs channel messages (06-01)
+- **Triple guard pattern** - channel_type, bot_id, subtype for robust message filtering (06-01)
+- **No thread_ts in DM responses** - DMs are direct, not threaded like channel mentions (06-01)
 
 ### Pending Todos
 
@@ -103,9 +107,9 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-24T07:06:49Z
-Stopped at: Completed 05-03-PLAN.md
+Last session: 2026-01-24T07:19:10Z
+Stopped at: Completed 06-01-PLAN.md
 Resume file: None
 
 ---
-*Next step: Execute Phase 6 (Support Chat DM with Bot)*
+*Next step: Execute 06-02-PLAN.md (slash command)*
