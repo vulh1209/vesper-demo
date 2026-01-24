@@ -9,14 +9,15 @@
  *   npm run api              # Start server on port 3001
  *   PORT=8080 npm run api    # Start on custom port
  */
+
+// Load environment variables FIRST before any other imports
+import 'dotenv/config';
+
 import { serve as honoServe } from '@hono/node-server';
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { logger } from 'hono/logger';
 import api from './routes/index.js';
-
-// Load environment variables
-import 'dotenv/config';
 
 export const app = new Hono();
 
