@@ -51,6 +51,7 @@ export async function searchAssets(params: SearchParams): Promise<{
     normalizedName: r.normalizedName,
     category: r.category,
     latestVersion: r.latestVersion,
+    slackPermalink: r.slackPermalink,
     updatedAt: new Date(), // Not available in search result, use current as placeholder
   }));
 
@@ -111,6 +112,7 @@ export async function getAssetDetail(assetId: string): Promise<AssetDetailResult
     normalizedName: asset.normalizedName,
     category: asset.category,
     latestVersion: asset.latestVersion,
+    slackPermalink: versionResults[0]?.slackPermalink ?? null,
     updatedAt: asset.updatedAt,
     versions: versionResults,
   };
@@ -147,12 +149,22 @@ export async function findAssetByName(name: string): Promise<AssetQueryResult | 
   }
 
   const asset = results[0];
+
+  // Get permalink from latest version
+  const versionResult = await db
+    .select({ slackPermalink: assetVersions.slackPermalink })
+    .from(assetVersions)
+    .where(eq(assetVersions.assetId, asset.id))
+    .orderBy(desc(assetVersions.createdAt))
+    .limit(1);
+
   return {
     id: asset.id,
     name: asset.rawName,
     normalizedName: asset.normalizedName,
     category: asset.category,
     latestVersion: asset.latestVersion,
+    slackPermalink: versionResult[0]?.slackPermalink ?? null,
     updatedAt: asset.updatedAt,
   };
 }

@@ -84,6 +84,7 @@ export interface AssetQueryResult {
   normalizedName: string;
   category: string | null;
   latestVersion: string | null;
+  slackPermalink: string | null;
   updatedAt: Date;
 }
 

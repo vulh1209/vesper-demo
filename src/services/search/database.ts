@@ -2,9 +2,9 @@
  * Database search service using PostgreSQL pg_trgm for fuzzy matching.
  * Provides exact match, fuzzy search, combined search, and category filtering.
  */
-import { sql, eq, and } from 'drizzle-orm';
+import { sql, eq, and, desc } from 'drizzle-orm';
 import { db } from '../../db/client.js';
-import { assets } from '../../db/schema.js';
+import { assets, assetVersions } from '../../db/schema.js';
 import type { SearchResult, SearchOptions, SearchResponse } from './types.js';
 
 /**
@@ -35,8 +35,17 @@ export async function exactSearchAsset(
 
   if (results.length === 0) return null;
 
+  // Get permalink from latest version
+  const versionResult = await db
+    .select({ slackPermalink: assetVersions.slackPermalink })
+    .from(assetVersions)
+    .where(eq(assetVersions.assetId, results[0].id))
+    .orderBy(desc(assetVersions.createdAt))
+    .limit(1);
+
   return {
     ...results[0],
+    slackPermalink: versionResult[0]?.slackPermalink ?? null,
     similarity: 1.0,
     matchType: 'exact',
   };
@@ -76,8 +85,30 @@ export async function fuzzySearchAssets(
     filtered = baseResults.filter(r => r.category === category.toLowerCase());
   }
 
+  // Get permalinks for all results
+  const assetIds = filtered.slice(0, limit).map(r => r.id);
+  const permalinks = assetIds.length > 0
+    ? await db
+        .select({
+          assetId: assetVersions.assetId,
+          slackPermalink: assetVersions.slackPermalink,
+        })
+        .from(assetVersions)
+        .where(sql`${assetVersions.assetId} IN ${assetIds}`)
+        .orderBy(desc(assetVersions.createdAt))
+    : [];
+
+  // Map to get latest permalink per asset
+  const permalinkMap = new Map<string, string | null>();
+  for (const p of permalinks) {
+    if (!permalinkMap.has(p.assetId)) {
+      permalinkMap.set(p.assetId, p.slackPermalink);
+    }
+  }
+
   return filtered.slice(0, limit).map(r => ({
     ...r,
+    slackPermalink: permalinkMap.get(r.id) ?? null,
     matchType: 'fuzzy' as const,
   }));
 }
@@ -143,8 +174,29 @@ export async function listAssetsByCategory(
     .orderBy(sql`${assets.updatedAt} DESC`)
     .limit(limit);
 
+  // Get permalinks for all results
+  const assetIds = results.map(r => r.id);
+  const permalinks = assetIds.length > 0
+    ? await db
+        .select({
+          assetId: assetVersions.assetId,
+          slackPermalink: assetVersions.slackPermalink,
+        })
+        .from(assetVersions)
+        .where(sql`${assetVersions.assetId} IN ${assetIds}`)
+        .orderBy(desc(assetVersions.createdAt))
+    : [];
+
+  const permalinkMap = new Map<string, string | null>();
+  for (const p of permalinks) {
+    if (!permalinkMap.has(p.assetId)) {
+      permalinkMap.set(p.assetId, p.slackPermalink);
+    }
+  }
+
   return results.map(r => ({
     ...r,
+    slackPermalink: permalinkMap.get(r.id) ?? null,
     similarity: 1.0,  // Not a similarity search
     matchType: 'exact' as const,
   }));

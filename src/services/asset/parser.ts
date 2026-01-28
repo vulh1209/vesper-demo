@@ -18,10 +18,10 @@ export const VERSION_PATTERNS: Array<{
     pattern: /(?<asset>[\p{L}\p{N}\s_\-]+?)\s*[_\-\s]*v(?<version>\d+(?:\.\d+)?)/iu,
     confidence: 'high',
   },
-  // Pattern 2: "Ho Ly Version 3"
+  // Pattern 2: "Ho Ly Version 3" or "Ho Ly ver 3"
   {
     name: 'version-word',
-    pattern: /(?<asset>[\p{L}\p{N}\s_\-]+?)\s+version\s+(?<version>\d+(?:\.\d+)?)/iu,
+    pattern: /(?<asset>[\p{L}\p{N}\s_\-]+?)\s+ver(?:sion)?\s+(?<version>\d+(?:\.\d+)?)/iu,
     confidence: 'high',
   },
   // Pattern 3: "character_rig_v14_final" (asset name with underscores)

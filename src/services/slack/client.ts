@@ -36,5 +36,38 @@ export function constructPermalink(channelId: string, messageTs: string): string
   }
   // ts format: "1234567890.123456" -> "p1234567890123456"
   const tsWithoutDot = messageTs.replace('.', '');
-  return `${workspaceUrl}/archives/${channelId}/p${tsWithoutDot}`;
+  // Remove trailing slash from workspaceUrl to avoid double slashes
+  const baseUrl = workspaceUrl.replace(/\/+$/, '');
+  return `${baseUrl}/archives/${channelId}/p${tsWithoutDot}`;
+}
+
+// User name cache to avoid excessive API calls
+const userNameCache = new Map<string, string | null>();
+
+/**
+ * Get user display name from Slack user ID
+ * Results are cached to avoid rate limits
+ */
+export async function getUserDisplayName(userId: string): Promise<string | null> {
+  if (!userId) return null;
+
+  // Check cache first
+  if (userNameCache.has(userId)) {
+    return userNameCache.get(userId) ?? null;
+  }
+
+  try {
+    const result = await slackClient.users.info({ user: userId });
+    const displayName = result.user?.profile?.display_name
+      || result.user?.profile?.real_name
+      || result.user?.name
+      || null;
+
+    userNameCache.set(userId, displayName);
+    return displayName;
+  } catch (error) {
+    console.error(`[slack] Failed to get user info for ${userId}:`, error);
+    userNameCache.set(userId, null);  // Cache failures too
+    return null;
+  }
 }

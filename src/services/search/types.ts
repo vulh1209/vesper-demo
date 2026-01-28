@@ -8,6 +8,7 @@ export interface SearchResult {
   normalizedName: string;
   category: string | null;
   latestVersion: string | null;
+  slackPermalink: string | null;
   similarity: number;  // 0-1 where 1 is exact match
   matchType: 'exact' | 'fuzzy';
 }

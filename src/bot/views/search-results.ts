@@ -17,11 +17,14 @@ export function buildSearchResultsBlocks(
   ];
 
   for (const result of results.slice(0, 5)) {
+    const linkText = result.slackPermalink
+      ? ` | <${result.slackPermalink}|:link: Xem>`
+      : '';
     blocks.push({
       type: 'section',
       text: {
         type: 'mrkdwn',
-        text: `*${result.name}*\n${result.category || 'Unknown'} | v${result.latestVersion || '?'}`,
+        text: `*${result.name}*\n${result.category || 'Unknown'} | v${result.latestVersion || '?'}${linkText}`,
       },
     });
   }

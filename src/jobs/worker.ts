@@ -2,6 +2,7 @@ import 'dotenv/config';
 import { Worker, Job } from 'bullmq';
 import { connection } from './queue.js';
 import { scrapeChannel } from '../services/slack/scraper.js';
+import { getUserDisplayName } from '../services/slack/client.js';
 import { extractAllVersions } from '../services/asset/parser.js';
 import { createOrUpdateVersion } from '../services/version/tracker.js';
 import { getConfiguredChannels, updateChannelSyncState, getChannelSyncState } from '../config/channels.js';
@@ -49,12 +50,17 @@ async function processMessages(
       const versions = extractAllVersions(message.text);
 
       for (const extracted of versions) {
+        // Resolve author name from Slack user ID (cached)
+        const authorName = message.user
+          ? await getUserDisplayName(message.user)
+          : null;
+
         const created = await createOrUpdateVersion(
           extracted,
           channelId,
           message.ts,
           message.user || null,
-          null,  // authorName - would need separate API call
+          authorName,
           message.text
         );
 

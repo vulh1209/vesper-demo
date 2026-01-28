@@ -29,26 +29,27 @@ export function buildAssetResultBlocks(asset: AssetDetailResult): KnownBlock[] {
   ];
 
   if (latestVersion) {
-    const section: KnownBlock = {
+    // Last updated info
+    blocks.push({
       type: 'section',
       text: {
         type: 'mrkdwn',
         text: `*Last Updated:* ${formatDate(latestVersion.createdAt)}${
-          latestVersion.authorName ? ` by ${latestVersion.authorName}` : ''
+          latestVersion.authorName ? ` by *${latestVersion.authorName}*` : ''
         }`,
       },
-    };
+    });
 
+    // Prominent link to original message
     if (latestVersion.slackPermalink) {
-      (section as any).accessory = {
-        type: 'button',
-        text: { type: 'plain_text', text: 'View in Slack' },
-        url: latestVersion.slackPermalink,
-        action_id: 'view_slack_message',
-      };
+      blocks.push({
+        type: 'section',
+        text: {
+          type: 'mrkdwn',
+          text: `:link: <${latestVersion.slackPermalink}|Xem tin nhắn gốc>`,
+        },
+      });
     }
-
-    blocks.push(section);
   }
 
   // Show version history (up to 3)
